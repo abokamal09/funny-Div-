@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Funny Div!!</title>
+
+        <!-- style -->
+        <style>
+            body{
+                margin: 0;
+                padding: 0;
+                background-color: #f0f0f0;
+                font-family: sans-serif;
+            }
+            .box {
+                height: 100px;
+                width: 100px;
+                border: 1px solid black;
+                transition: 0.3s;
+                margin: 30px auto;
+                background-color: #fff;
+                border-radius: 5px;
+            }
+            input {
+                display: block;
+                margin: 30px auto;
+                padding: 10px;
+                border: 1px solid black;
+                border-radius: 5px;
+            }
+            input:focus {
+                outline: none;
+                box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+            }
+        </style>
+    </head>
+    <body>
+        <div class="box"></div>
+        <label for="value">Enter Color or Border Radius!!</label>
+        <input type="text" id="value">
+
+        <!-- script -->
+        <script>
+            let box = document.querySelector('.box'),
+                input = document.querySelector('#value');
+
+            input.addEventListener("input", boxFun);
+
+            function boxFun(e) {
+                box.style.backgroundColor = e.target.value;
+                box.style.borderRadius = e.target.value;
+            }
+        </script>
+    </body>
+</html>
